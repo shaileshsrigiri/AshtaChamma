@@ -152,15 +152,15 @@ struct CreateGameView: View {
 
         isLoading = true
 
-        FirebaseManager.shared.createGame(players: [userId]) { [weak self] result in
+        FirebaseManager.shared.createGame(players: [userId]) { result in
             DispatchQueue.main.async {
-                self?.isLoading = false
+                isLoading = false
                 switch result {
                 case .success(let id):
-                    self?.gameCode = id
+                    gameCode = id
                 case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
-                    self?.showError = true
+                    errorMessage = error.localizedDescription
+                    showError = true
                 }
             }
         }

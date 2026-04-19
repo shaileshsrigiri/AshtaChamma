@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41330C042F948F1E008F52C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41330C032F948F1E008F52C8 /* GoogleService-Info.plist */; };
 		A87A3E397CC9D5E9FE321A78 /* Pods_AshtaChammaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA35B5DDDB1BBAAA407620 /* Pods_AshtaChammaTests.framework */; };
 		C1F4D04E19BB8B5ED030B636 /* Pods_AshtaChamma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC11B1DD033966C7314DB75C /* Pods_AshtaChamma.framework */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		0505B0902721D9BC78C0FE1D /* Pods-AshtaChamma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AshtaChamma.release.xcconfig"; path = "Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma.release.xcconfig"; sourceTree = "<group>"; };
 		41330B4A2F811296008F52C8 /* AshtaChamma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AshtaChamma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41330B842F947EAE008F52C8 /* AshtaChammaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AshtaChammaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41330C032F948F1E008F52C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45EB4DAEB6C62C64A957D2CB /* Pods-AshtaChamma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AshtaChamma.debug.xcconfig"; path = "Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma.debug.xcconfig"; sourceTree = "<group>"; };
 		8161A029372486A65A0A9C27 /* Pods-AshtaChammaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AshtaChammaTests.release.xcconfig"; path = "Target Support Files/Pods-AshtaChammaTests/Pods-AshtaChammaTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC11B1DD033966C7314DB75C /* Pods_AshtaChamma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AshtaChamma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 		41330B412F811296008F52C8 = {
 			isa = PBXGroup;
 			children = (
+				41330C032F948F1E008F52C8 /* GoogleService-Info.plist */,
 				41330B4C2F811297008F52C8 /* AshtaChamma */,
 				41330B852F947EAE008F52C8 /* AshtaChammaTests */,
 				41330B4B2F811296008F52C8 /* Products */,
@@ -196,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41330C042F948F1E008F52C8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

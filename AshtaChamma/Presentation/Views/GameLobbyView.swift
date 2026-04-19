@@ -128,16 +128,16 @@ struct GameLobbyView: View {
             return
         }
 
-        FirebaseManager.shared.joinGame(gameId: gameCode, playerId: userId) { [weak self] result in
+        FirebaseManager.shared.joinGame(gameId: gameCode, playerId: userId) { result in
             DispatchQueue.main.async {
-                self?.isLoading = false
+                isLoading = false
                 switch result {
                 case .success:
                     // Navigate to game
-                    self?.gameCode = ""
+                    gameCode = ""
                 case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
-                    self?.showErrorAlert = true
+                    errorMessage = error.localizedDescription
+                    showErrorAlert = true
                 }
             }
         }
