@@ -37,11 +37,15 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		41330B4C2F811297008F52C8 /* AshtaChamma */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = AshtaChamma;
 			sourceTree = "<group>";
 		};
 		41330B852F947EAE008F52C8 /* AshtaChammaTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = AshtaChammaTests;
 			sourceTree = "<group>";
 		};
@@ -221,13 +225,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
