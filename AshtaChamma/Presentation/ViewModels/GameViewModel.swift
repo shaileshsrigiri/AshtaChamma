@@ -154,17 +154,19 @@ final class GameViewModel: ObservableObject {
         }
         
         let token = playerTokens[index]
-        
+
         // Validate move
         guard validMoves.contains(index) else {
             print("DEBUG: Token not in valid moves. Valid: \(validMoves), Index: \(index)")
             return
         }
-        guard GameEngine.canMoveToken(token: token, steps: move) else {
-            gameMessage = "Must capture a token before entering the inner path!"
+
+        let hasAnyCaptured = playerTokens.contains { $0.hasCaptured }
+        guard GameEngine.canMoveToken(token: token, steps: move, playerHasAnyCaptured: hasAnyCaptured) else {
+            gameMessage = "Invalid move!"
             return
         }
-        
+
         print("DEBUG: Moving token \(index) by \(move)")
         selectedTokenIndex = index
         performMove(tokenIndex: index, move: move)
@@ -190,14 +192,17 @@ final class GameViewModel: ObservableObject {
 
         animationTimer?.invalidate()
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.016, repeats: true) { [weak self] _ in
-            let elapsed = Date().timeIntervalSince(startTime)
-            let progress = min(elapsed / animationDuration, 1.0)
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                let elapsed = Date().timeIntervalSince(startTime)
+                let progress = min(elapsed / animationDuration, 1.0)
 
-            self?.animatingToken?.progress = progress
+                self.animatingToken?.progress = progress
 
-            if progress >= 1.0 {
-                self?.animationTimer?.invalidate()
-                self?.completeAnimatedMove(tokenIndex: tokenIndex, move: move)
+                if progress >= 1.0 {
+                    self.animationTimer?.invalidate()
+                    self.completeAnimatedMove(tokenIndex: tokenIndex, move: move)
+                }
             }
         }
     }
@@ -382,8 +387,9 @@ final class GameViewModel: ObservableObject {
         }
         let pid = state.currentPlayerIndex
         let playerTokens = state.tokens[pid] ?? []
+        let hasAnyCaptured = playerTokens.contains { $0.hasCaptured }
         validMoves = playerTokens.enumerated().compactMap { index, token in
-            GameEngine.canMoveToken(token: token, steps: move) ? index : nil
+            GameEngine.canMoveToken(token: token, steps: move, playerHasAnyCaptured: hasAnyCaptured) ? index : nil
         }
     }
 
@@ -392,9 +398,11 @@ final class GameViewModel: ObservableObject {
         var counts: [Int: Int] = [:]
         for m in movePool { counts[m, default: 0] += 1 }
         let pid = state.currentPlayerIndex
+        let playerTokens = state.tokens[pid] ?? []
+        let hasAnyCaptured = playerTokens.contains { $0.hasCaptured }
         return counts.keys.sorted().compactMap { value in
-            let anyLegal = (state.tokens[pid] ?? []).contains { token in
-                !token.isFinished && GameEngine.canMoveToken(token: token, steps: value)
+            let anyLegal = playerTokens.contains { token in
+                !token.isFinished && GameEngine.canMoveToken(token: token, steps: value, playerHasAnyCaptured: hasAnyCaptured)
             }
             guard anyLegal else { return nil }
             return (value, counts[value]!)

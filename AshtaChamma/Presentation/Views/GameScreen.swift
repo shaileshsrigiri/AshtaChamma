@@ -293,7 +293,7 @@ struct GameBoardView: View {
                 }
 
                 // Get the grid cell this token is on using the player's path
-                if token.isOnBoard && !token.isFinished,
+                if token.isOnBoard,
                    let gridCell = GameEngine.getCellForToken(playerID: playerId, pathIndex: token.pathIndex),
                    gridCell == cellIndex {
                     tokens.append(token)
@@ -318,6 +318,14 @@ struct GameBoardView: View {
                     animToken.isOnBoard = true
                     tokens.append(animToken)
                 }
+            }
+        }
+
+        // Add finished tokens at the house cell
+        if cellIndex == GameEngine.HOUSE {
+            for (_, playerTokens) in viewModel.state.tokens {
+                let finishedTokens = playerTokens.filter { $0.isFinished }
+                tokens.append(contentsOf: finishedTokens)
             }
         }
 

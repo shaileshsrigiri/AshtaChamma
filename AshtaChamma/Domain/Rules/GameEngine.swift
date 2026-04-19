@@ -62,8 +62,9 @@ struct GameEngine {
     }
     
     /// Path index 0..<`OUTER_LEN` = outer ring; `OUTER_LEN`..<24 = inner; 24 = house.
-    /// Entering the inner ring (path index ≥ 16) from the outer track or from yard requires `hasCaptured` (matches desktop `ashta_chamma.html`).
-    static func canMoveToken(token: Token, steps: Int) -> Bool {
+    /// Entering the inner ring (path index ≥ 16) from the outer track or from yard requires capture.
+    /// The capture can be by this token OR any other token in the player's group (once any token captures, all can enter).
+    static func canMoveToken(token: Token, steps: Int, playerHasAnyCaptured: Bool = false) -> Bool {
         if token.isFinished { return false }
         let newIdx: Int
         if !token.isOnBoard {
@@ -73,8 +74,11 @@ struct GameEngine {
         }
         if newIdx > 24 { return false }
         let onOuterOrYard = !token.isOnBoard || token.pathIndex < OUTER_LEN
-        if onOuterOrYard && newIdx >= OUTER_LEN && !token.hasCaptured {
-            return false
+        if onOuterOrYard && newIdx >= OUTER_LEN {
+            // Can enter inner if this token captured OR any token in the player's group captured
+            if !token.hasCaptured && !playerHasAnyCaptured {
+                return false
+            }
         }
         return true
     }

@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		41330B882F947EAE008F52C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41330B422F811296008F52C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41330B492F811296008F52C8;
+			remoteInfo = AshtaChamma;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		41330B4A2F811296008F52C8 /* AshtaChamma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AshtaChamma.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41330B842F947EAE008F52C8 /* AshtaChammaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AshtaChammaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = AshtaChamma;
 			sourceTree = "<group>";
 		};
+		41330B852F947EAE008F52C8 /* AshtaChammaTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AshtaChammaTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		41330B472F811296008F52C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41330B812F947EAE008F52C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				41330B4C2F811297008F52C8 /* AshtaChamma */,
+				41330B852F947EAE008F52C8 /* AshtaChammaTests */,
 				41330B4B2F811296008F52C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				41330B4A2F811296008F52C8 /* AshtaChamma.app */,
+				41330B842F947EAE008F52C8 /* AshtaChammaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = 41330B4A2F811296008F52C8 /* AshtaChamma.app */;
 			productType = "com.apple.product-type.application";
 		};
+		41330B832F947EAE008F52C8 /* AshtaChammaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41330B8A2F947EAE008F52C8 /* Build configuration list for PBXNativeTarget "AshtaChammaTests" */;
+			buildPhases = (
+				41330B802F947EAE008F52C8 /* Sources */,
+				41330B812F947EAE008F52C8 /* Frameworks */,
+				41330B822F947EAE008F52C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41330B892F947EAE008F52C8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				41330B852F947EAE008F52C8 /* AshtaChammaTests */,
+			);
+			name = AshtaChammaTests;
+			packageProductDependencies = (
+			);
+			productName = AshtaChammaTests;
+			productReference = 41330B842F947EAE008F52C8 /* AshtaChammaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					41330B492F811296008F52C8 = {
 						CreatedOnToolsVersion = 16.4;
+					};
+					41330B832F947EAE008F52C8 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 41330B492F811296008F52C8;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				41330B492F811296008F52C8 /* AshtaChamma */,
+				41330B832F947EAE008F52C8 /* AshtaChammaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		41330B482F811296008F52C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41330B822F947EAE008F52C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41330B802F947EAE008F52C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41330B892F947EAE008F52C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41330B492F811296008F52C8 /* AshtaChamma */;
+			targetProxy = 41330B882F947EAE008F52C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		41330B532F811298008F52C8 /* Debug */ = {
@@ -302,6 +377,42 @@
 			};
 			name = Release;
 		};
+		41330B8B2F947EAE008F52C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW6C4U3R3N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShaileshSrigiri.AshtaChammaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AshtaChamma.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AshtaChamma";
+			};
+			name = Debug;
+		};
+		41330B8C2F947EAE008F52C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW6C4U3R3N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShaileshSrigiri.AshtaChammaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AshtaChamma.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AshtaChamma";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +430,15 @@
 			buildConfigurations = (
 				41330B562F811298008F52C8 /* Debug */,
 				41330B572F811298008F52C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41330B8A2F947EAE008F52C8 /* Build configuration list for PBXNativeTarget "AshtaChammaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41330B8B2F947EAE008F52C8 /* Debug */,
+				41330B8C2F947EAE008F52C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
