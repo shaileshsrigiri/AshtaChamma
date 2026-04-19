@@ -104,7 +104,7 @@ struct OpeningView: View {
 
                 // Tap to continue button
                 VStack(spacing: 16) {
-                    NavigationLink(destination: HomeView()) {
+                    NavigationLink(destination: SignUpView().navigationBarBackButtonHidden(true)) {
                         VStack(spacing: 8) {
                             Text("Tap to Continue")
                                 .font(.system(size: 18, weight: .semibold))

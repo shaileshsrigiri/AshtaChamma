@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A87A3E397CC9D5E9FE321A78 /* Pods_AshtaChammaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA35B5DDDB1BBAAA407620 /* Pods_AshtaChammaTests.framework */; };
+		C1F4D04E19BB8B5ED030B636 /* Pods_AshtaChamma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC11B1DD033966C7314DB75C /* Pods_AshtaChamma.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		41330B882F947EAE008F52C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -17,8 +22,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0505B0902721D9BC78C0FE1D /* Pods-AshtaChamma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AshtaChamma.release.xcconfig"; path = "Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma.release.xcconfig"; sourceTree = "<group>"; };
 		41330B4A2F811296008F52C8 /* AshtaChamma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AshtaChamma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41330B842F947EAE008F52C8 /* AshtaChammaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AshtaChammaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45EB4DAEB6C62C64A957D2CB /* Pods-AshtaChamma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AshtaChamma.debug.xcconfig"; path = "Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma.debug.xcconfig"; sourceTree = "<group>"; };
+		8161A029372486A65A0A9C27 /* Pods-AshtaChammaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AshtaChammaTests.release.xcconfig"; path = "Target Support Files/Pods-AshtaChammaTests/Pods-AshtaChammaTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC11B1DD033966C7314DB75C /* Pods_AshtaChamma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AshtaChamma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79C7FADD2E83AF18FF532E3 /* Pods-AshtaChammaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AshtaChammaTests.debug.xcconfig"; path = "Target Support Files/Pods-AshtaChammaTests/Pods-AshtaChammaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5DA35B5DDDB1BBAAA407620 /* Pods_AshtaChammaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AshtaChammaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -39,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1F4D04E19BB8B5ED030B636 /* Pods_AshtaChamma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,18 +58,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A87A3E397CC9D5E9FE321A78 /* Pods_AshtaChammaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1112618DBD45322A59121368 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC11B1DD033966C7314DB75C /* Pods_AshtaChamma.framework */,
+				E5DA35B5DDDB1BBAAA407620 /* Pods_AshtaChammaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27D0B7D887D3B2BE34D181FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45EB4DAEB6C62C64A957D2CB /* Pods-AshtaChamma.debug.xcconfig */,
+				0505B0902721D9BC78C0FE1D /* Pods-AshtaChamma.release.xcconfig */,
+				D79C7FADD2E83AF18FF532E3 /* Pods-AshtaChammaTests.debug.xcconfig */,
+				8161A029372486A65A0A9C27 /* Pods-AshtaChammaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		41330B412F811296008F52C8 = {
 			isa = PBXGroup;
 			children = (
 				41330B4C2F811297008F52C8 /* AshtaChamma */,
 				41330B852F947EAE008F52C8 /* AshtaChammaTests */,
 				41330B4B2F811296008F52C8 /* Products */,
+				27D0B7D887D3B2BE34D181FE /* Pods */,
+				1112618DBD45322A59121368 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41330B552F811298008F52C8 /* Build configuration list for PBXNativeTarget "AshtaChamma" */;
 			buildPhases = (
+				BE62030E19234B8DAC8BFF2C /* [CP] Check Pods Manifest.lock */,
 				41330B462F811296008F52C8 /* Sources */,
 				41330B472F811296008F52C8 /* Frameworks */,
 				41330B482F811296008F52C8 /* Resources */,
+				4D2A75CCF909E082BC982983 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -89,8 +126,6 @@
 				41330B4C2F811297008F52C8 /* AshtaChamma */,
 			);
 			name = AshtaChamma;
-			packageProductDependencies = (
-			);
 			productName = AshtaChamma;
 			productReference = 41330B4A2F811296008F52C8 /* AshtaChamma.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +134,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41330B8A2F947EAE008F52C8 /* Build configuration list for PBXNativeTarget "AshtaChammaTests" */;
 			buildPhases = (
+				E1E921B21ABB725277263D66 /* [CP] Check Pods Manifest.lock */,
 				41330B802F947EAE008F52C8 /* Sources */,
 				41330B812F947EAE008F52C8 /* Frameworks */,
 				41330B822F947EAE008F52C8 /* Resources */,
@@ -112,8 +148,6 @@
 				41330B852F947EAE008F52C8 /* AshtaChammaTests */,
 			);
 			name = AshtaChammaTests;
-			packageProductDependencies = (
-			);
 			productName = AshtaChammaTests;
 			productReference = 41330B842F947EAE008F52C8 /* AshtaChammaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -173,6 +207,74 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D2A75CCF909E082BC982983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AshtaChamma/Pods-AshtaChamma-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE62030E19234B8DAC8BFF2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AshtaChamma-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1E921B21ABB725277263D66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AshtaChammaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41330B462F811296008F52C8 /* Sources */ = {
@@ -323,6 +425,7 @@
 		};
 		41330B562F811298008F52C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45EB4DAEB6C62C64A957D2CB /* Pods-AshtaChamma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -351,6 +454,7 @@
 		};
 		41330B572F811298008F52C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0505B0902721D9BC78C0FE1D /* Pods-AshtaChamma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -379,6 +483,7 @@
 		};
 		41330B8B2F947EAE008F52C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D79C7FADD2E83AF18FF532E3 /* Pods-AshtaChammaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -397,6 +502,7 @@
 		};
 		41330B8C2F947EAE008F52C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8161A029372486A65A0A9C27 /* Pods-AshtaChammaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

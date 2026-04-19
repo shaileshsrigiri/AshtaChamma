@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+
     var body: some View {
         ZStack {
             // Ambient background
@@ -53,20 +55,33 @@ struct HomeView: View {
                 Spacer()
 
                 VStack(spacing: 20) {
-                    Text("Game Mode")
-                        .font(.system(size: 28, weight: .bold))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [
-                                    Color(hex: "ffe8a0"),
-                                    Color(hex: "e8b830"),
-                                    Color(hex: "c89420")
-                                ],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
-                        .padding(.bottom, 12)
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Game Mode")
+                                .font(.system(size: 28, weight: .bold))
+                                .foregroundStyle(
+                                    LinearGradient(
+                                        colors: [
+                                            Color(hex: "ffe8a0"),
+                                            Color(hex: "e8b830"),
+                                            Color(hex: "c89420")
+                                        ],
+                                        startPoint: .top,
+                                        endPoint: .bottom
+                                    )
+                                )
+                            Text("Choose how to play")
+                                .font(.system(size: 12, weight: .regular))
+                                .foregroundColor(Color(hex: "c9a070"))
+                        }
+                        Spacer()
+                        Button(action: { authViewModel.logout() }) {
+                            Image(systemName: "power")
+                                .foregroundColor(.red)
+                                .font(.system(size: 16, weight: .semibold))
+                        }
+                    }
+                    .padding(.bottom, 12)
 
                     // Classic mode button
                     NavigationLink(destination: GameScreen().navigationBarBackButtonHidden(true)) {
@@ -80,7 +95,7 @@ struct HomeView: View {
                                     Text("Classic")
                                         .font(.system(size: 18, weight: .bold))
                                         .foregroundColor(Color(hex: "2a1810"))
-                                    Text("4 Player Traditional Game")
+                                    Text("Local 4 Player Game")
                                         .font(.system(size: 12, weight: .regular))
                                         .foregroundColor(Color(hex: "5a4428"))
                                 }
@@ -109,29 +124,52 @@ struct HomeView: View {
                         .cornerRadius(12)
                         .shadow(color: Color(hex: "3d2010").opacity(0.45), radius: 8, x: 0, y: 4)
                     }
+
+                    // Online mode button
+                    NavigationLink(destination: GameLobbyView().navigationBarBackButtonHidden(true)) {
+                        VStack(spacing: 8) {
+                            HStack(spacing: 12) {
+                                Image(systemName: "network")
+                                    .font(.system(size: 24))
+                                    .foregroundColor(Color(hex: "2a1810"))
+
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Online")
+                                        .font(.system(size: 18, weight: .bold))
+                                        .foregroundColor(Color(hex: "2a1810"))
+                                    Text("Play with friends online")
+                                        .font(.system(size: 12, weight: .regular))
+                                        .foregroundColor(Color(hex: "5a4428"))
+                                }
+
+                                Spacer()
+
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .foregroundColor(Color(hex: "2a1810"))
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 16)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            LinearGradient(
+                                colors: [
+                                    Color(hex: "5ab8d9"),
+                                    Color(hex: "6fc8e8"),
+                                    Color(hex: "4a9fc9")
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .cornerRadius(12)
+                        .shadow(color: Color(hex: "2d5f8f").opacity(0.45), radius: 8, x: 0, y: 4)
+                    }
                 }
                 .padding(.horizontal, 30)
 
                 Spacer()
-
-                // Back button
-                NavigationLink(destination: OpeningView().navigationBarBackButtonHidden(true)) {
-                    HStack(spacing: 8) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 12, weight: .semibold))
-                        Text("Back")
-                            .font(.system(size: 14, weight: .semibold))
-                    }
-                    .foregroundColor(Color(hex: "d4b090"))
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(hex: "d4b090").opacity(0.4), lineWidth: 1)
-                    )
-                    .cornerRadius(8)
-                }
-                .padding(.bottom, 40)
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -141,5 +179,6 @@ struct HomeView: View {
 #Preview {
     NavigationStack {
         HomeView()
+            .environmentObject(AuthViewModel())
     }
 }

@@ -6,13 +6,27 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct AshtaChammaApp: App {
+    @StateObject var authViewModel = AuthViewModel()
+
+    init() {
+        // Initialize Firebase
+        FirebaseApp.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                OpeningView()
+            if authViewModel.isLoggedIn {
+                NavigationStack {
+                    HomeView()
+                }
+            } else {
+                NavigationStack {
+                    OpeningView()
+                }
             }
         }
     }
